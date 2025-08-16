@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guess The Number — Fun Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" id="card">
+      <header>
+        <div class="logo">G</div>
+        <div>
+          <h1>Guess The Number</h1>
+          <p class="lead">Choose a maximum, then try to guess the secret number.</p>
+        </div>
+      </header>
+
+      <div class="controls">
+        <label class="small">Max number
+          <input class="input" id="maxInput" type="number" min="2" placeholder="e.g. 100" value="100">
+        </label>
+        <button class="btn" id="startBtn">Start Game</button>
+        <button class="btn secondary" id="resetBtn">Reset</button>
+        <button class="btn secondary" id="quitBtn">Quit</button>
+      </div>
+
+      <div class="game-area">
+        <div class="panel">
+          <div class="status small">Game status: <span id="status">Waiting to start</span></div>
+
+          <div style="display:flex;gap:10px;align-items:center;">
+            <input class="input" id="guessInput" type="number" placeholder="Enter your guess" disabled>
+            <button class="btn" id="guessBtn" disabled>Guess</button>
+          </div>
+
+          <div class="hint" id="hintBox">Start a game to see hints here.</div>
+
+          <div class="footer stats">
+            <div class="chip">Attempts: <strong id="attempts">0</strong></div>
+            <div class="chip">Last guess: <span id="lastGuess">-</span></div>
+            <div class="chip">Range: <span id="rangeText">-</span></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div>
+              <div class="small">Secret number (for debugging)</div>
+              <div class="big-num" id="secretDebug">—</div>
+            </div>
+
+            <div>
+              <div class="small">Quick tips</div>
+              <ul style="margin:8px 0 0 16px;color:rgba(230,238,248,0.8)">
+                <li>Start near the middle for fewer attempts.</li>
+                <li>Click Reset to start over quickly.</li>
+                <li>Click Quit to stop immediately.</li>
+              </ul>
+            </div>
+
+            <div style="margin-top:8px">
+              <button class="btn secondary" id="hintBtn">Give me a random hint</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="confetti" id="confetti"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
